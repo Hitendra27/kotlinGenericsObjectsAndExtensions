@@ -1,11 +1,6 @@
 fun main(args: Array<String>) {
 
-    val question1 = Question<String>("Quoth the raven ___", "nevermore", Difficulty.MEDIUM)
-    val question2 = Question<Boolean>("The Sky is green. True or false", false, Difficulty.EASY)
-    val question3 = Question<Int>("How many days are there between full moons?", 28, Difficulty.HARD)
-    println(question1.questionText)
-    println(question1.answer)
-    println(question1.toString())
+    println("${Quiz.answered} of ${Quiz.total} answered.")
 }
 
 data class Question<T>(
@@ -16,4 +11,15 @@ data class Question<T>(
 
 enum class Difficulty {
     EASY, MEDIUM, HARD
+}
+
+class Quiz {
+    val question1 = Question<String>("Quoth the raven ___", "nevermore", Difficulty.MEDIUM)
+    val question2 = Question<Boolean>("The Sky is green. True or false", false, Difficulty.EASY)
+    val question3 = Question<Int>("How many days are there between full moons?", 28, Difficulty.HARD)
+
+    companion object StudentProgress {
+        var total: Int = 10
+        var answered: Int = 3
+    }
 }
