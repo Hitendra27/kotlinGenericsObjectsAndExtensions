@@ -5,14 +5,14 @@ fun main(args: Array<String>) {
     val question3 = Question<Int>("How many days are there between full moons?", 28, Difficulty.HARD)
     println(question1.questionText)
     println(question1.answer)
+    println(question1.toString())
 }
 
-class Question<T>(
+data class Question<T>(
     val questionText: String,
     val answer: T,
     val difficulty: Difficulty
-) {
-}
+)
 
 enum class Difficulty {
     EASY, MEDIUM, HARD
