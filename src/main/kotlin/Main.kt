@@ -1,6 +1,6 @@
 fun main(args: Array<String>) {
 
-   println(Quiz.progressText)
+   Quiz.printProgressBar()
 }
 
 data class Question<T>(
@@ -26,3 +26,10 @@ class Quiz {
 
 val Quiz.StudentProgress.progressText: String
     get() = "${answered} of ${total} answered"
+
+fun Quiz.StudentProgress.printProgressBar() {
+    repeat(Quiz.answered) { print("▓") }
+    repeat(Quiz.total - Quiz.answered) { print("▒") }
+    println()
+    println(Quiz.progressText)
+}
