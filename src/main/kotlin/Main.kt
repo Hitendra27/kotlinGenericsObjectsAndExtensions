@@ -1,6 +1,6 @@
 fun main(args: Array<String>) {
 
-    println("${Quiz.answered} of ${Quiz.total} answered.")
+   println(Quiz.progressText)
 }
 
 data class Question<T>(
@@ -23,3 +23,6 @@ class Quiz {
         var answered: Int = 3
     }
 }
+
+val Quiz.StudentProgress.progressText: String
+    get() = "${answered} of ${total} answered"
