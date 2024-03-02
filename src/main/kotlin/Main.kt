@@ -1,7 +1,8 @@
 fun main(args: Array<String>) {
 
-  val quiz = Quiz()
-    quiz.printQuiz()
+   Quiz().apply {
+      printQuiz()
+  }
 }
 
 data class Question<T>(
